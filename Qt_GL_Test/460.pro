@@ -4,12 +4,10 @@ TARGET = 277
 TEMPLATE = app
 CONFIG += console
 CONFIG += c++11
-LIBS += -lopengl32
-LIBS += -lglut32
-LIBS += -lglu32
+LIBS += -framework GLUT
+LIBS += -framework OpenGL
 CONFIG += warn_on
 CONFIG += debug
-
 INCLUDEPATH += include
 
 include(src/src.pri)
@@ -43,3 +41,6 @@ address_sanitizer {
     QMAKE_CXXFLAGS += -fsanitize=address
     QMAKE_LFLAGS += -fsanitize=address
 }
+
+DISTFILES += \
+    README.txt
